@@ -1,0 +1,21 @@
+{
+  "name": "netflix-clone",
+  "version": "1.0.0",
+  "description": "A feature-rich, high-fidelity Netflix Clone web application built with modern web technologies",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -l 3000 .",
+    "dev": "npx serve -l 3000 .",
+    "preview": "npx serve -l 3000 ."
+  },
+  "keywords": [
+    "netflix",
+    "netflix-clone",
+    "streaming",
+    "video-player",
+    "carousel",
+    "web-app"
+  ],
+  "author": "Antigravity",
+  "license": "MIT"
+}

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix - Watch TV Shows Online, Watch Movies Online</title>
+  <link rel="icon" type="image/x-icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico" />
+  
+  <!-- Google Fonts: Bebas Neue for iconic Netflix titles, Inter for sleek UI -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ======================================================================
+       NAVIGATION BAR
+       ====================================================================== -->
+  <header class="netflix-header" id="netflixHeader">
+    <div class="nav-left">
+      <div class="brand-logo" id="brandLogo" title="Netflix Home">
+        <!-- Netflix Wordmark SVG -->
+        <svg viewBox="0 0 111 30" aria-label="Netflix">
+          <path d="M105.062 14.28L111 30c-1.75-.25-3.499-.563-5.28-.845l-3.345-8.686-3.437 7.969c-1.687-.282-3.344-.376-5.031-.595l6.042-13.76-5.5-13.155h5.046l3.031 7.75 3.124-7.75h4.922l-5.51 13.358zM88.75 27.67c-1.593-.157-3.187-.282-4.75-.407v-26.438h4.75v26.845zm-11.282-12.875l4.47-13.97h-4.969l-2.438 8.78-2.438-8.78h-4.938l4.47 13.97v12.281c1.625.125 3.28.188 4.874.313v-12.594zm-19.124-7.875v5.719h7.469v4.25h-7.469v8.688c3.094.218 6.188.375 9.313.625v4.281c-4.656-.375-9.281-.719-13.906-1.125v-26.562h14.156v4.344h-9.563v-.22zm-15.093 0v6.75h6.688v4.281h-6.688v13.688c-1.625-.125-3.25-.219-4.875-.313v-28.531h13.969v4.219h-9.094v-.094zm-14.812 0v17.5c-1.625-.094-3.25-.156-4.875-.219v-21.375h4.875v4.094zm0-8.094v4.344h-4.875v-4.344h4.875zm-13.594 8.094l-5.844 14.125v-18.219h-4.875v26.156c3.469.313 6.938.656 10.375 1.031l5.219-12.594v13.25c1.625.219 3.25.406 4.875.656v-26.594h-4.75v2.188z"/>
+        </svg>
+      </div>
+
+      <nav class="primary-navigation">
+        <a href="#" class="nav-link active" data-category="home">Home</a>
+        <a href="#" class="nav-link" data-category="tv">TV Shows</a>
+        <a href="#" class="nav-link" data-category="movies">Movies</a>
+        <a href="#" class="nav-link" data-category="popular">New & Popular</a>
+        <a href="#" class="nav-link" data-category="my-list">My List</a>
+      </nav>
+    </div>
+
+    <div class="nav-right">
+      <!-- Search Box -->
+      <div class="search-wrapper" id="searchWrapper">
+        <button class="search-toggle-btn" id="searchToggleBtn" title="Search titles, people, genres">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <div class="search-input-box">
+          <input type="text" id="searchInput" placeholder="Titles, people, genres..." autocomplete="off" />
+          <span class="search-clear-btn" id="searchClearBtn">&times;</span>
+        </div>
+      </div>
+
+      <!-- Mode Toggle Button -->
+      <button class="mode-toggle-btn" id="modeToggleBtn">Landing Page</button>
+
+      <!-- Notification Bell -->
+      <div class="notification-wrapper">
+        <button class="notification-btn" id="notificationBtn" title="Notifications">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span class="notification-badge">3</span>
+        </button>
+
+        <div class="notification-dropdown" id="notificationDropdown">
+          <div class="notification-item">
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=200&auto=format&fit=crop" alt="Stranger Things" />
+            <div class="notification-info">
+              <p>New Season Coming Friday: <strong>Stranger Things</strong></p>
+              <span>2 hours ago</span>
+            </div>
+          </div>
+          <div class="notification-item">
+            <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=200&auto=format&fit=crop" alt="Squid Game" />
+            <div class="notification-info">
+              <p>Top 10 in India: <strong>Squid Game Season 2</strong></p>
+              <span>Yesterday</span>
+            </div>
+          </div>
+          <div class="notification-item">
+            <img src="https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=200&auto=format&fit=crop" alt="Arcane" />
+            <div class="notification-info">
+              <p>Trending Hit: <strong>Arcane</strong> is lighting up the charts</p>
+              <span>3 days ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile Avatar & Dropdown -->
+      <div class="profile-menu-wrapper" id="profileMenu">
+        <div class="profile-trigger">
+          <img class="profile-avatar" id="activeProfileAvatar" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200&auto=format&fit=crop" alt="Profile" />
+          <span class="profile-caret">▼</span>
+        </div>
+
+        <div class="profile-dropdown" id="profileDropdown">
+          <div id="profilesListContainer"></div>
+          <div class="profile-divider"></div>
+          <div class="profile-action">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20h9"></path>
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+            </svg>
+            Manage Profiles
+          </div>
+          <div class="profile-action">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            Account Settings
+          </div>
+          <div class="profile-action">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            Help Center
+          </div>
+          <div class="profile-divider"></div>
+          <div class="profile-action" id="signOutBtn">
+            Sign out of Netflix
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       BROWSE STREAMING VIEW
+       ====================================================================== -->
+  <main id="browseView">
+    <!-- Featured Hero Billboard -->
+    <section class="billboard-container" id="heroBillboard"></section>
+
+    <!-- Content Rows & Carousels -->
+    <div class="main-content" id="mainContent"></div>
+
+    <!-- Search Results View (shown when typing in search bar) -->
+    <section class="search-results-section" id="searchResultsSection">
+      <div class="search-header-bar">
+        <h2 class="search-query-title" id="searchQueryTitle">Search results</h2>
+        <div class="filter-chips">
+          <span class="filter-chip active">All</span>
+          <span class="filter-chip">Movies</span>
+          <span class="filter-chip">TV Shows</span>
+          <span class="filter-chip">Action</span>
+          <span class="filter-chip">Sci-Fi</span>
+          <span class="filter-chip">Thriller</span>
+        </div>
+      </div>
+      <div class="search-grid" id="searchGridContainer"></div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       LANDING / WELCOME MARKETING VIEW
+       ====================================================================== -->
+  <section class="landing-view" id="landingView">
+    <div class="landing-hero">
+      <div class="landing-hero-content">
+        <h1 class="landing-title">Unlimited movies, TV shows, and more</h1>
+        <p class="landing-subtitle">Starts at ₹149. Cancel anytime.</p>
+        <p class="landing-callout">Ready to watch? Enter your email to create or restart your membership.</p>
+        <div class="landing-email-form">
+          <input type="email" class="landing-email-input" id="landingEmailInput" placeholder="Email address" />
+          <button class="btn-get-started" id="landingGetStartedBtn">
+            Get Started
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature Row 1 -->
+    <div class="landing-feature-row">
+      <div class="landing-feature-text">
+        <h2>Enjoy on your TV</h2>
+        <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+      </div>
+      <div class="landing-feature-visual">
+        <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?q=80&w=800&auto=format&fit=crop" alt="Smart TV Setup" />
+      </div>
+    </div>
+
+    <!-- Feature Row 2 -->
+    <div class="landing-feature-row">
+      <div class="landing-feature-text">
+        <h2>Download your shows to watch offline</h2>
+        <p>Save your favorites easily and always have something to watch on the go.</p>
+      </div>
+      <div class="landing-feature-visual">
+        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=800&auto=format&fit=crop" alt="Mobile Watch Offline" />
+      </div>
+    </div>
+
+    <!-- Feature Row 3 -->
+    <div class="landing-feature-row">
+      <div class="landing-feature-text">
+        <h2>Watch everywhere</h2>
+        <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.</p>
+      </div>
+      <div class="landing-feature-visual">
+        <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?q=80&w=800&auto=format&fit=crop" alt="Watch everywhere" />
+      </div>
+    </div>
+
+    <!-- Feature Row 4 -->
+    <div class="landing-feature-row">
+      <div class="landing-feature-text">
+        <h2>Create profiles for kids</h2>
+        <p>Send children on adventures with their favourite characters in a space made just for them — free with your membership.</p>
+      </div>
+      <div class="landing-feature-visual">
+        <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=800&auto=format&fit=crop" alt="Kids profiles" />
+      </div>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="landing-faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is Netflix?</span>
+            <span class="icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices. You can watch as much as you want, whenever you want without a single commercial – all for one low monthly price.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How much does Netflix cost?</span>
+            <span class="icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₹149 to ₹649 a month. No extra costs, no contracts.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Where can I watch?</span>
+            <span class="icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do I cancel?</span>
+            <span class="icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Netflix is flexible. There are no pesky contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What can I watch on Netflix?</span>
+            <span class="icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       DYNAMIC HOVER PREVIEW CARD (pops up over hovered cards)
+       ====================================================================== -->
+  <div class="hover-preview-card" id="hoverPreviewCard"></div>
+
+  <!-- ======================================================================
+       DETAIL MODAL ("MORE INFO")
+       ====================================================================== -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" title="Close">&times;</button>
+      
+      <div class="modal-banner">
+        <img class="modal-banner-img" id="modalBannerImg" src="" alt="Title banner" />
+        <div class="modal-banner-gradient"></div>
+        <div class="modal-banner-content">
+          <h2 class="modal-title" id="modalTitle">Title</h2>
+          <div class="modal-banner-actions">
+            <button class="btn-play" id="modalPlayBtn">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              Play
+            </button>
+            <button class="action-circle-btn" id="modalListBtn" title="My List">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+            <button class="action-circle-btn" title="Like">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-grid-2col">
+          <div class="modal-info-left">
+            <div class="modal-meta-row">
+              <span class="match-score" id="modalMatchScore">98% Match</span>
+              <span id="modalYear">2024</span>
+              <span class="badge-age" id="modalAgeRating">16+</span>
+              <span class="duration-text" id="modalDuration">4 Seasons</span>
+              <span class="badge-quality" id="modalQuality">4K Ultra HD</span>
+            </div>
+            <p class="modal-synopsis" id="modalSynopsis"></p>
+          </div>
+
+          <div class="modal-info-right">
+            <div class="modal-info-row">
+              <span class="label">Cast: </span>
+              <span class="val" id="modalCast"></span>
+            </div>
+            <div class="modal-info-row">
+              <span class="label">Genres: </span>
+              <span class="val" id="modalGenres"></span>
+            </div>
+            <div class="modal-info-row">
+              <span class="label">This show is: </span>
+              <span class="val" id="modalTags"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Episodes Selector for TV Shows -->
+        <div class="episodes-section" id="modalEpisodesSection">
+          <div class="episodes-header">
+            <h3>Episodes</h3>
+            <select class="season-select" id="seasonSelect">
+              <option value="1">Season 1</option>
+              <option value="2">Season 2</option>
+            </select>
+          </div>
+          <div class="episodes-list" id="episodesListContainer"></div>
+        </div>
+
+        <!-- More Like This Recommendations -->
+        <div class="more-like-this-section">
+          <h3>More Like This</h3>
+          <div class="more-like-this-grid" id="moreLikeThisGrid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       FULLSCREEN VIDEO PLAYER
+       ====================================================================== -->
+  <div class="player-container" id="playerContainer">
+    <video class="player-video-element" id="playerVideo" playsinline></video>
+
+    <!-- Top Navigation Header -->
+    <div class="player-header">
+      <button class="player-back-btn" id="playerBackBtn" title="Back to Browse">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+      </button>
+      <div class="player-title-display" id="playerTitleDisplay">Playing Movie</div>
+      <div style="width: 28px;"></div>
+    </div>
+
+    <!-- Bottom Controls Overlay -->
+    <div class="player-controls-bottom">
+      <!-- Scrub Bar -->
+      <div class="player-scrubber-wrap" id="playerScrubberWrap">
+        <div class="player-scrubber-track">
+          <div class="player-buffer-bar"></div>
+          <div class="player-progress-bar" id="playerProgressBar"></div>
+          <div class="player-scrubber-thumb" id="playerScrubberThumb"></div>
+        </div>
+      </div>
+
+      <!-- Controls Buttons Row -->
+      <div class="player-buttons-row">
+        <div class="player-controls-left">
+          <button class="player-btn" id="playerPlayPauseBtn" title="Play/Pause (Space)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            </svg>
+          </button>
+
+          <button class="player-btn" id="playerRewindBtn" title="Rewind 10s (Left Arrow)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.22 3.16-1.98 5.12-1.98 3.8 0 7.05 2.62 7.84 6.13l2.43-.81C21.6 11.23 17.47 8 12.5 8z"/>
+            </svg>
+          </button>
+
+          <button class="player-btn" id="playerForwardBtn" title="Forward 10s (Right Arrow)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.97 0-9.1 3.23-10.27 7.71l2.43.81c.79-3.51 4.04-6.13 7.84-6.13 1.96 0 3.73.76 5.12 1.98L13 16h9V7l-3.6 3.6z"/>
+            </svg>
+          </button>
+
+          <div class="volume-wrapper">
+            <button class="player-btn" id="playerVolumeBtn" title="Mute/Unmute (M)">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+              </svg>
+            </button>
+            <input type="range" class="volume-slider" id="playerVolumeSlider" min="0" max="1" step="0.05" value="1" />
+          </div>
+
+          <span class="player-time-text" id="playerTimeDisplay">0:00</span>
+        </div>
+
+        <div class="player-controls-right">
+          <button class="player-btn" id="playerSpeedBtn" title="Playback Speed" style="font-size: 0.95rem; font-weight: 700;">1x</button>
+          <button class="player-btn" id="playerFullscreenBtn" title="Fullscreen (F)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notice -->
+  <div class="toast-notice" id="toastNotice"></div>
+
+  <!-- ======================================================================
+       FOOTER
+       ====================================================================== -->
+  <footer class="netflix-footer">
+    <div class="footer-social-links">
+      <span>Facebook</span>
+      <span>Instagram</span>
+      <span>Twitter</span>
+      <span>YouTube</span>
+    </div>
+
+    <div class="footer-links-grid">
+      <a href="#">Audio Description</a>
+      <a href="#">Help Centre</a>
+      <a href="#">Gift Cards</a>
+      <a href="#">Media Centre</a>
+      <a href="#">Investor Relations</a>
+      <a href="#">Jobs</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Privacy</a>
+      <a href="#">Legal Notices</a>
+      <a href="#">Cookie Preferences</a>
+      <a href="#">Corporate Information</a>
+      <a href="#">Contact Us</a>
+    </div>
+
+    <button class="footer-service-code">Service Code: 894-023</button>
+
+    <div class="footer-copyright">
+      &copy; 1997-2026 Netflix, Inc. · Built with precision modern web technologies.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/movies-data.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
